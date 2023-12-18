@@ -25,6 +25,7 @@ class UserRequest extends FormRequest
         return [
             //
                   'name'          => 'required|string|max:255',
+                  'username'      =>  'required|string|unique:App\Models\User,password|password|max:255',
                   'email'         => 'required|string|unique:App\Models\User,email|email|max:255', 
                  'password'      => 'required|min:8',
             ];
