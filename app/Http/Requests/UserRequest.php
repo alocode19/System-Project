@@ -21,6 +21,7 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
+        
         if( request()->routeIs('user.store')){
         return [
             //
@@ -48,5 +49,8 @@ class UserRequest extends FormRequest
                     'password'          => 'required|confirmed|min:8',
                 ];
             }
+        
+        
     }
+    
 }
