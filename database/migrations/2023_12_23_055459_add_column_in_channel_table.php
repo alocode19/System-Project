@@ -11,21 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('announcements', function (Blueprint $table) {
-            $table->bigIncrements('id'); 
+        Schema::table('channel', function (Blueprint $table) {
             $table->unsignedBigInteger('announcement_id');
-            $table->string('announcement_title')->nullable();
-            $table->string('content')->nullable();
-            $table->timestamps();
+            $table->foreign('announcement_id')->references('id')->on('channel');
+            
         });
-        
-    } 
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('announcements');
+        Schema::table('channel', function (Blueprint $table) {
+            //
+        });
     }
 };

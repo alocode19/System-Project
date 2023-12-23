@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('channel', function (Blueprint $table) {
-            $table->bigIncrements('id'); 
-            $table->unsignedBigInteger('channel_id');   
-            $table->string('channel_name')->nullable();
-            $table->string('description')->nullable();
-
+        Schema::create('announcement', function (Blueprint $table) {
+            $table->id('announcement_id');
+            $table->string('desciption');
+            $table->timestamps();
         });
-       
     }
 
     /**
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('channel');
+        Schema::dropIfExists('announcement');
     }
 };

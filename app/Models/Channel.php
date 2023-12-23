@@ -23,6 +23,13 @@ class Channel extends Model
      */
     protected $primaryKey = 'channel_id';
 
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $foreignKey = 'announcement_id';
+
      /**
      * The attributes that are mass assignable.
      *
