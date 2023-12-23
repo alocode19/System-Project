@@ -23,6 +23,9 @@ class ChannelRequest extends FormRequest
     {
         return [
             //
+            'channel_id' => 'required|exists:announcements,id',
+            'channel_name' => 'required|string|max:255',
+            'description' => 'string|nullable|max:255',
         ];
     }
 }

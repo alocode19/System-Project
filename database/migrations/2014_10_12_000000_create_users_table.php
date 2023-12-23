@@ -20,12 +20,11 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->enum('role', ['admin','user'])->default('user');
         });
 
-        Schema::table('users',function(Blueprint $table) {
-            $table->enum('role', ['admin','user'])->default('user');
-        });
+       
+
+        
 
     }
 
