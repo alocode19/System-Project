@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('channel_id');   
             $table->string('channel_name')->nullable();
             $table->string('description')->nullable();
+            
 
         });
        
