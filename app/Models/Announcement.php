@@ -14,7 +14,7 @@ class Announcement extends Model
      *
      * @var string
      */
-    protected $table = 'announcements';
+    protected $table = 'announcement';
 
      /**
      * The primary key associated with the table.
@@ -29,9 +29,8 @@ class Announcement extends Model
      * @var array
      */
     protected $fillable = [
-        'announcement_title',
-        'content',
-        'user_id',
+        'announcement_id',
+        'description',
     ];
 
 }

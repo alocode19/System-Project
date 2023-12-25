@@ -30,10 +30,10 @@ class UserRequest extends FormRequest
             }
         else if( request()->routeIs('user.store')){
         return [
-            //i
+            //
                   'username'        => 'required|strng|max:255',
                   'email'           => 'required|string|email|unique:App\Models\User,email|email|max:255', 
-                 'password'         => 'required|min:8',
+                  'password'         => 'required|min:8',
             ];
         }
         else if( request()->routeIs('user.update')){

@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('channel', function (Blueprint $table) {
-            $table->bigIncrements('id'); 
-            $table->unsignedBigInteger('channel_id');   
+            $table->bigIncrements('channel_id');   
             $table->string('channel_name')->nullable();
             $table->string('description')->nullable();
             

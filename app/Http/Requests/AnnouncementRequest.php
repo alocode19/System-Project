@@ -23,9 +23,9 @@ class AnnouncementRequest extends FormRequest
     {
         return [
             //
-            'announcement_title'    => 'required|string|max:255',
-            'content'               => 'required|string',
-            'user_id'               => 'required|integer',
+            'announcement_id'       => 'required|int|max:255',
+            'description'           => 'required|string|max:255',
+
 
         ];
     }

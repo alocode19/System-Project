@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('channel', function (Blueprint $table) {
             $table->unsignedBigInteger('announcement_id');
-            $table->foreign('announcement_id')->references('id')->on('channel');
+            $table->foreign('announcement_id')->references('channel_id')->on('channel');
             $table->timestamps();
 
             

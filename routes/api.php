@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ChannelController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\AnnouncementController;
-use App\Http\Controllers\Api\CarouselItemsController;
+
 
 /*
 |-------------------------------------------------------------------------- 
@@ -22,7 +22,7 @@ use App\Http\Controllers\Api\CarouselItemsController;
 //Public APIs
 Route::controller(AuthController::class)->group(function (){
     Route::post('/login',[AuthController::class,'login'])->name('user.login');
-    Route::post('/user',                 'store')->name('user.store');
+    Route::post('/user', [UserController::class,'store'])->name('user.store');
 
 });
 
@@ -31,6 +31,7 @@ Route::controller(AuthController::class)->group(function (){
 
  Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
+
 
     //UserController APIs
     Route::controller(UserController::class)->group(function (){

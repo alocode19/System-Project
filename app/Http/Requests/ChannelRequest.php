@@ -11,7 +11,7 @@ class ChannelRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,9 +23,10 @@ class ChannelRequest extends FormRequest
     {
         return [
             //
-            'channel_id' => 'required|exists:announcements,id',
-            'channel_name' => 'required|string|max:255',
-            'description' => 'string|nullable|max:255',
+            'channel_id'        => 'required|int|max:255',
+            'channel_name'      => 'required|string|max:255',
+            'description'       => 'string|nullable|max:255',
+            'announcement_id'   => 'required|int|max:255',
         ];
     }
 }
