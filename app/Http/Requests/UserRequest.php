@@ -21,20 +21,25 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        
-        if( request()->routeIs('user.store')){
+        if( request()->routeIs('user.login')){
+            return [
+                //
+                      'email'        => 'required|string|email|max:255', 
+                     'password'      => 'required|min:8',
+                ];
+            }
+        else if( request()->routeIs('user.store')){
         return [
-            //
-                  'name'          => 'required|string|max:255',
-                  'username'      =>  'required|string|unique:App\Models\User,password|password|max:255',
-                  'email'         => 'required|string|unique:App\Models\User,email|email|max:255', 
-                 'password'      => 'required|min:8',
+            //i
+                  'username'        => 'required|strng|max:255',
+                  'email'           => 'required|string|email|unique:App\Models\User,email|email|max:255', 
+                 'password'         => 'required|min:8',
             ];
         }
         else if( request()->routeIs('user.update')){
         return [
             //
-                'name'          => 'required|string|max:255', 
+                'username'          => 'required|string|max:255',
             ];
         }
         else if( request()->routeIs('user.email')){
@@ -49,8 +54,13 @@ class UserRequest extends FormRequest
                     'password'          => 'required|confirmed|min:8',
                 ];
             }
-        
-        
+        else if( request()->routeIs('user.image') || request()->routeIs('profile.image') ){
+            return [
+                //
+                    'image'          => 'required|image|mimes:jpg,bmp,png|max:2048',
+                ];
+            }
     }
     
 }
+  
