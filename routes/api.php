@@ -20,11 +20,10 @@ use App\Http\Controllers\Api\AnnouncementController;
 |
 */
 //Public APIs
-Route::controller(AuthController::class)->group(function (){
     Route::post('/login',[AuthController::class,'login'])->name('user.login');
     Route::post('/user', [UserController::class,'store'])->name('user.store');
 
-});
+
 
  
 //Private APIs  
